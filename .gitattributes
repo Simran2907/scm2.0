@@ -6,7 +6,7 @@
 
 # Explicitly declare text files you want to always be normalized and converted
 # to native line endings on checkout.
-*.css text
+*.css text eol=lf
 *.html text
 *.java text
 *.properties text
