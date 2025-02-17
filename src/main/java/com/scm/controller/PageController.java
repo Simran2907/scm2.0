@@ -17,7 +17,7 @@ public class PageController {
     
         //sending data to view
         model.addAttribute("title", "Smart Contact Manager 2.0");
-        model.addAttribute("content", "I am here to build smart contact manager usgin spring boot , thymleaf and cloud");
+        model.addAttribute("cont", "I am here to build smart contact manager usgin spring boot , thymleaf and cloud");
         model.addAttribute("repository", "http://www.github.com");
         return "HOME";
     }

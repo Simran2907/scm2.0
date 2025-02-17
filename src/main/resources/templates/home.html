@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" th:replace="~{base :: parent(~{::#home})}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +9,9 @@
     
 </head>
 <body>
-    <div class = "flex flex-col items-center justify-center w-1/2 p-4 mx-auto mt-4 space-y-3 bg-gray-200">
+    <div id="home" class = "flex flex-col items-center justify-center w-1/2 p-4 mx-auto mt-4 space-y-3 bg-gray-200">
         <h1 class ="text-2xl font-bold" data-th-text="${title}"></h1>
-        <p class="text-xl text-gray-700">Content : <span data-th-text="${content}"></span></p>
+        <p class="text-xl text-gray-700">Content : <span data-th-text="${cont}"></span></p>
         <p>Git Repository Check: <span th:text="${repository}"></span></p> 
         <a th:href="${repository}">Click here to open</a>
         <p class="text-gray-400">i am here to build a smart contact manager</p>
