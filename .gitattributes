@@ -8,7 +8,7 @@
 # to native line endings on checkout.
 *.css text eol=lf
 *.html text
-*.java text
+*.java text eol=lf
 *.properties text
 *.xml text
 
