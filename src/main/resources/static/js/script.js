@@ -8,9 +8,9 @@ function changeTheme(){
     changePageTheme(currentTheme,currentTheme);
     const changeThemeButton = document.getElementById("theme_change_btn");
     changeThemeButton.querySelector('span').textContent = currentTheme == "light"?"Dark":"Light";
-    const oldTheme = currentTheme;
 
     changeThemeButton.addEventListener("click",(event) =>{
+        const oldTheme = currentTheme;
         currentTheme = currentTheme == "light"? "dark":"light";
         changePageTheme(currentTheme,oldTheme);
       });
@@ -19,7 +19,7 @@ function changeTheme(){
 
 function changePageTheme(currentTheme,oldTheme){
     setTheme(currentTheme);
-    document.querySelector("html").classList.remove(oldTheme);
+     if(oldTheme) document.querySelector("html").classList.remove(oldTheme);
     document.querySelector("html").classList.add(currentTheme);
     document.getElementById("theme_change_btn").querySelector('span').textContent = currentTheme == "light"?"Dark":"Light";
 }

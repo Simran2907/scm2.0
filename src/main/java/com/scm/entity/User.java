@@ -3,8 +3,12 @@ package com.scm.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -22,7 +26,8 @@ import lombok.Setter;
 public class User {
 
     @Id
-    private String userId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int userId;
 
     @Column(name = "user_name",length = 50,nullable =false)
     private String name;
@@ -43,7 +48,7 @@ public class User {
     private Providers provider = Providers.SELF;
     private String providerUserId;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user" , cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval =  true)
     private List<Contact> contacts = new ArrayList<>();
 
 }
